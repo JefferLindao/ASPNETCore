@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace PlatziASPNETCore.Models
 {
-  public class Escuela : ObjetoEsculaBase
+  public class Escuela : ObjetoEscuelaBase
   {
     public int AñoDeCreacion { get; set; }
     public string Pais { get; set; }

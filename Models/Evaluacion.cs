@@ -2,7 +2,7 @@ using System;
 
 namespace PlatziASPNETCore.Models
 {
-  public class Evaluacion : ObjetoEsculaBase
+  public class Evaluacion : ObjetoEscuelaBase
   {
     public Alumno Alumno { get; set; }
     public Asignatura Asignatura { get; set; }

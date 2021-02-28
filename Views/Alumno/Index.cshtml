@@ -1,0 +1,16 @@
+@model Alumno;
+
+@{
+  ViewData["Title"] = "Información Alumno";
+  Layout="_Layout";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<strong>Desde la vista normal</strong>
+<p>
+  Nombre: @Model.Nombre </br>
+  Id: @Model.UniqueId
+</p>
+
+<p><i>@ViewBag.CosaDinamica</i></p>

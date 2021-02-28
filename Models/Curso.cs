@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace PlatziASPNETCore.Models
 {
-  public class Curso : ObjetoEsculaBase
+  public class Curso : ObjetoEscuelaBase
   {
     public TiposJornada Jornada { get; set; }
     public List<Asignatura> Asignaturas { get; set; }

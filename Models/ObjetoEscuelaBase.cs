@@ -2,11 +2,11 @@ using System;
 
 namespace PlatziASPNETCore.Models
 {
-  public abstract class ObjetoEsculaBase
+  public abstract class ObjetoEscuelaBase
   {
     public string UniqueId { get; set; }
     public string Nombre { get; set; }
-    public ObjetoEsculaBase()
+    public ObjetoEscuelaBase()
     {
       UniqueId = Guid.NewGuid().ToString();
     }
