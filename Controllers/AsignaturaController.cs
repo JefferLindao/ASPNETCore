@@ -12,13 +12,13 @@ namespace PlatziASPNETCore.Controllers
       var listaAsignatura = new List<Asignatura>()
       {
         new Asignatura{Nombre = "Matemeticas",
-          UniqueId = Guid.NewGuid().ToString()},
+          Id = Guid.NewGuid().ToString()},
         new Asignatura{Nombre = "Edicacion Fisica",
-          UniqueId = Guid.NewGuid().ToString()},
+          Id = Guid.NewGuid().ToString()},
         new Asignatura{Nombre = "Castellano",
-          UniqueId = Guid.NewGuid().ToString()},
+          Id = Guid.NewGuid().ToString()},
         new Asignatura{Nombre = "Programacion",
-          UniqueId = Guid.NewGuid().ToString()}
+          Id = Guid.NewGuid().ToString()}
       };
 
       ViewBag.CositaDinamica = "La Monja";

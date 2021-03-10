@@ -11,7 +11,7 @@ namespace PlatziASPNETCore.Controllers
     public IActionResult Index(){
       return View(new Alumno{
         Nombre="Jefferson Lindao",
-        UniqueId = Guid.NewGuid().ToString()
+        Id = Guid.NewGuid().ToString()
       });
     }
     public IActionResult MultiplesAlumno()
@@ -31,7 +31,7 @@ namespace PlatziASPNETCore.Controllers
                         from n2 in nombre2
                         from a1 in apellido1
                         select new Alumno { Nombre = $"{n1} {n2} {a1}" };
-      return listaAlumno.OrderBy((al)=>al.UniqueId).ToList();
+      return listaAlumno.OrderBy((al)=>al.Id).ToList();
     }
   }
 }
