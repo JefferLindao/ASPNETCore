@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using PlatziASPNETCore.Models;
 
@@ -9,21 +10,18 @@ namespace PlatziASPNETCore.Controllers
   {
     public IActionResult Index()
     {
-      var listaAsignatura = new List<Asignatura>()
-      {
-        new Asignatura{Nombre = "Matemeticas",
-          Id = Guid.NewGuid().ToString()},
-        new Asignatura{Nombre = "Edicacion Fisica",
-          Id = Guid.NewGuid().ToString()},
-        new Asignatura{Nombre = "Castellano",
-          Id = Guid.NewGuid().ToString()},
-        new Asignatura{Nombre = "Programacion",
-          Id = Guid.NewGuid().ToString()}
-      };
-
-      ViewBag.CositaDinamica = "La Monja";
+      return View(_context.Asignaturas.FirstOrDefault());
+    }
+    public IActionResult MultiplesAsignatura()
+    {
+      ViewBag.CosaDinamica = "La Monja";
       ViewBag.Fecha = DateTime.Now;
-      return View("MultiplesAsignatura",listaAsignatura);
+      return View("MultiplesAsignatura", _context.Asignaturas);
+    }
+    private EscuelaContext _context;
+    public AsignaturaController(EscuelaContext context)
+    {
+      _context = context;
     }
   }
 }
