@@ -6,30 +6,30 @@ using PlatziASPNETCore.Models;
 
 namespace PlatziASPNETCore.Controllers
 {
-  public class AlumnoController:Controller
+  public class CursoController:Controller
   {
     public IActionResult Index(string id)
     {
       if (!string.IsNullOrEmpty(id))
       {
-        var alumno = from alum in _context.Alumnos
-                       where alum.Id == id
-                       select alum;
-        return View(alumno.SingleOrDefault()); 
+        var curso = from curs in _context.Cursos
+                       where curs.Id == id
+                       select curs;
+        return View(curso.SingleOrDefault()); 
       }
       else
       {
-        return View("MultiplesAlumno", _context.Alumnos);
+        return View("MultiplesCursos", _context.Cursos);
       }
     }
-    public IActionResult MultiplesAlumno()
+    public IActionResult MultiplesCursos()
     {
       ViewBag.CositaDinamica = "La Monja";
       ViewBag.Fecha = DateTime.Now;
-      return View("MultiplesAlumno", _context.Alumnos);
+      return View("MultiplesCursos", _context.Cursos);
     }
     private EscuelaContext _context;
-    public AlumnoController(EscuelaContext context)
+    public CursoController(EscuelaContext context)
     {
       _context = context;
     }
