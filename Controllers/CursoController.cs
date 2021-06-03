@@ -37,9 +37,19 @@ namespace PlatziASPNETCore.Controllers
     public IActionResult Create(Curso curso)
     {
       ViewBag.Fecha = DateTime.Now;
-      _context.Cursos.Add(curso);
-      _context.SaveChanges();
-      return View();
+      if(ModelState.IsValid){
+        var escuela = _context.Escuelas.FirstOrDefault();
+        curso.EscuelaId = escuela.Id;
+        _context.Cursos.Add(curso);
+        _context.SaveChanges();
+        ViewBag.MensajeExtra = "Curso creado exitosamente.";
+        return View("Index", curso);
+      }
+      else
+      {
+        return View(curso);
+      }
+      
     }
     private EscuelaContext _context;
     public CursoController(EscuelaContext context)
