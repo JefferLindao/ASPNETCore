@@ -36,8 +36,12 @@ namespace PlatziASPNETCore
       });
 
       services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-      services.AddDbContext<EscuelaContext>(
+      /*services.AddDbContext<EscuelaContext>(
         options => options.UseInMemoryDatabase(databaseName: "testDB")
+      );*/
+      string conString = ConfigurationExtensions.GetConnectionString(this.Configuration, "DefaultConnection");
+      services.AddDbContext<EscuelaContext>(
+        options => options.UseSqlServer(conString)
       );
     }
 
